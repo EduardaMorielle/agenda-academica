@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Acadêmica Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Agenda Acadêmica Web</h1>
+            <p class="subtitulo">Sistema de apoio para divulgação e organização de eventos acadêmicos.</p>
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#pesquisa">Pesquisar Eventos</a></li>
+                    <li><a href="#cadastro">Cadastrar Evento</a></li>
+                    <li><a href="#eventos">Lista de Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="pesquisa" class="container">
+            <h2>Pesquisar e Filtrar Eventos</h2>
+            <fieldset class="filtros" aria-label="Filtros de pesquisa">
+                <legend class="visually-hidden">Filtros de pesquisa</legend>
+                <div class="input-group">
+                    <label for="busca">Pesquisar por título:</label>
+                    <input type="text" id="busca" placeholder="Digite o título do evento..." maxlength="100">
+                </div>
+                <div class="input-group">
+                    <label for="categoria">Filtrar por categoria:</label>
+                    <select id="categoria">
+                        <option value="">Todas as categorias</option>
+                        <option value="palestra">Palestra</option>
+                        <option value="minicurso">Minicurso</option>
+                        <option value="oficina">Oficina</option>
+                        <option value="seminario">Seminário</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+            </fieldset>
+        </section>
+
+        <section id="cadastro" class="container">
+            <h2>Cadastrar Novo Evento</h2>
+            <form id="formEvento">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="titulo">Título do evento: *</label>
+                        <input type="text" id="titulo" name="titulo" required minlength="3" maxlength="100">
+                        <span class="erro" aria-live="polite"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="categoria-evento">Categoria: *</label>
+                        <select id="categoria-evento" name="categoria" required>
+                            <option value="">Selecione...</option>
+                            <option value="palestra">Palestra</option>
+                            <option value="minicurso">Minicurso</option>
+                            <option value="oficina">Oficina</option>
+                            <option value="seminario">Seminário</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="data">Data: *</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="local">Local: *</label>
+                        <input type="text" id="local" name="local" required maxlength="100">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="vagas">Vagas disponíveis: *</label>
+                        <input type="number" id="vagas" name="vagas" required min="1" max="500">
+                        <span class="erro" aria-live="polite"></span>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="descricao">Descrição: *</label>
+                        <textarea id="descricao" name="descricao" rows="4" required maxlength="500"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Cadastrar Evento</button>
+                <div id="mensagem" class="mensagem" role="alert" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section id="eventos" class="container">
+            <h2>Eventos Acadêmicos</h2>
+            <div id="listaEventos" class="grid-eventos">
+                <!-- Eventos serão inseridos aqui dinamicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agenda Acadêmica Web | Desenvolvido por Eliana Borges Lover, Eduarda Gabrielle M. dos Santos</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
