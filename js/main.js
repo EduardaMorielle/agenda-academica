@@ -112,10 +112,19 @@ function criarCardEvento(evento) {
     card.innerHTML = `
         <h3>${evento.titulo}</h3>
         <div class="evento-meta">
-            <span class="categoria">${formatarCategoria(evento.categoria)}</span>
+            <div class="evento-categoria">
+                <img src="img/icon-${evento.categoria}.png" 
+                     alt="${formatarCategoria(evento.categoria)}" 
+                     width="42" height="42"
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.marginLeft='0';">
+                <span class="categoria-label">${evento.categoria.toUpperCase()}</span>
+            </div>
             <div>
-                <span>${formatarData(evento.data)}</span>
-                <span class="vagas ${poucasVagas ? 'poucas' : ''}">${evento.vagas} vagas</span>
+                <span class="data-evento">${formatarData(evento.data)}</span>
+                <span class="vagas-disponiveis ${poucasVagas ? 'poucas' : ''}">
+                    ${evento.vagas} ${evento.vagas === 1 ? 'vaga' : 'vagas'}
+                </span>
             </div>
         </div>
         <p>${evento.descricao}</p>

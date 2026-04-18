@@ -251,27 +251,54 @@ fieldset.filtros {
 .evento-meta {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 0;
+    border-top: 1px solid #e9ecef;
+    gap: 12px;
     color: #4c5867;
 }
 
-.evento-meta div {
+.evento-categoria {
     display: flex;
-    gap: 0.75rem;
     align-items: center;
+    gap: 10px;
 }
 
-.categoria {
-    background: #3498db;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+.evento-categoria img {
+    border-radius: 12px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+.categoria-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1f3247;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.data-evento {
+    color: #6c757d;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+.vagas-disponiveis {
+    background: linear-gradient(135deg, #d4edda, #c8e6c9);
+    color: #155724;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.vagas-disponiveis.poucas {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
 }
 
 .vagas {
@@ -340,4 +367,44 @@ footer {
     section {
         padding: 2rem 0;
     }
+}
+
+/* Ícones categorias - suas imagens IA */
+.evento-categoria {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 12px;
+    background: rgba(52, 152, 219, 0.08);
+    border-radius: 12px;
+    border-left: 4px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.evento-categoria:hover {
+    background: rgba(52, 152, 219, 0.12);
+    transform: translateX(4px);
+}
+
+.evento-categoria img {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    object-fit: cover;
+}
+
+.evento-categoria img:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.categoria-label {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
